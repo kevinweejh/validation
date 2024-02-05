@@ -1,5 +1,5 @@
 const emailInput = document.querySelector("#email");
-emailInput.classList.add(...['appearance-none','w-full','border','border-gray-800','m-0','font-inherit','text-sm','box-border', 'invalid:border-2', 'invalid:border-red-500', 'valid:border-gray-800']);
+emailInput.classList.add(...['appearance-none','w-full','border','border-gray-800','m-0','font-inherit','text-sm','box-border', 'invalid:border-2', 'invalid:border-red-500']);
 
 export default () => {
     emailInput.addEventListener("input", () => {
