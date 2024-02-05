@@ -1,4 +1,5 @@
 import './style.css';
+import EmailValidation from './emailValidation';
 
 if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode!');
@@ -11,21 +12,9 @@ validationBtn.addEventListener("click", () => {
     modal.showModal();
 })
 
-const emailInput = document.querySelector("#email");
+EmailValidation();
+
 const countryInput = document.querySelector("#country");
 const zipInput = document.querySelector("#zip");
 const passwordInput = document.querySelector("#password");
 const passwordConfirmationInput = document.querySelector("#passwordConfirmation");
-
-// Email 
-emailInput.addEventListener("input", () => {
-    if (emailInput.validity.typeMismatch) {
-        emailInput.setCustomValidity("Please provide a valid email address.");
-    } 
-})
-
-emailInput.addEventListener("onfocusout", () => {
-    if (emailInput.validty.valueMissing) {
-        emailInput.setCustomValidity("An email address is required!")
-    }
-})
