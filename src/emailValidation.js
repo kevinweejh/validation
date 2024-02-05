@@ -2,14 +2,22 @@ const emailInput = document.querySelector("#email");
 
 export default () => {
     emailInput.addEventListener("input", () => {
-        if (emailInput.validity.typeMismatch) {
-            emailInput.setCustomValidity("Please provide a valid email address.");
-        } 
+        validateEmail();
     })
 
-    emailInput.addEventListener("onfocusout", () => {
-        if (emailInput.validty.valueMissing) {
-            emailInput.setCustomValidity("An email address is required!")
-        }
+    emailInput.addEventListener("focusout", () => {
+        validateEmail();
     })
+
+    const validateEmail = () => {
+        let validityMessage = "";
+        if (emailInput.validity.typeMismatch) {
+            validityMessage = "Please provide a valid email address.";
+        } 
+        if (emailInput.validity.valueMissing) {
+            validityMessage = "An email address is required!";
+        }
+
+        emailInput.setCustomValidity(validityMessage);
+    }
 }
