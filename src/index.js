@@ -17,4 +17,15 @@ const zipInput = document.querySelector("#zip");
 const passwordInput = document.querySelector("#password");
 const passwordConfirmationInput = document.querySelector("#passwordConfirmation");
 
+// Email 
+emailInput.addEventListener("input", () => {
+    if (emailInput.validity.typeMismatch) {
+        emailInput.setCustomValidity("Please provide a valid email address.");
+    } 
+})
 
+emailInput.addEventListener("onfocusout", () => {
+    if (emailInput.validty.valueMissing) {
+        emailInput.setCustomValidity("An email address is required!")
+    }
+})
