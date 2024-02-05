@@ -7,14 +7,22 @@
 <body>
     <div id="content">
         <button id="validate">Validation Time</button>
-        <dialog id="validation">
+        <dialog id="validation" class="border border-solid border-gray-800 rounded-[8px] shadow-md p-5 w-fit bg-white backdrop:bg-black/50">
             <form action="" method="dialog">
-                <p><label>Email: </label><input type="email" id="email" maxlength="254" required></p>
-                <p><label>Country: </label><select id="country"></select></p>
-                <p><label>Zip Code: </label><input type="text" id="zip"></p>
-                <p><label>Password: </label><input type="password" id="password"></p>
-                <p><label>Confirm Password: </label><input type="password" id="passwordConfirmation"></p>
-                <p><button type="submit">Check</button></p>
+                <header class="mb-5 pb-2.5 border-b border-gray-400">
+                    <h1 class="m-0 text-2xl">Join the ride!</h1>
+                </header>
+                <div class="mb-5">
+                    <p class="my-2"><label>Email: </label><input type="email" id="email" maxlength="254" required></p>
+                    <p class="my-2"><label>Country: </label><select id="country"></select></p>
+                    <p class="my-2"><label>Zip Code: </label><input type="text" id="zip"></p>
+                    <p class="my-2"><label>Password: </label><input type="password" id="password"></p>
+                    <p class="my-2"><label>Confirm Password: </label><input type="password" id="passwordConfirmation"></p>
+                </div>
+                <footer class="text-right border-t border-gray-400 pt-2.5">
+                    <p><button type="submit" class="bg-blue-600 text-white border-0 rounded-md py-2 px-8 ml-2.5 cursor-pointer hover:bg-blue-900">Sign me up, baby!</button></p>
+                </footer>
+                
             </form>
         </dialog>
         <script type="module" src="index.js"></script>
