@@ -31,11 +31,6 @@ The objective of this project is to gain hands-on experience with the Constraint
 - Examples showing the limitations of client-side validation in terms of security.
 - Highlighting the importance of server-side validation as the ultimate gatekeeper.
 
-### Performance and Scalability
-
-- Analysis of how client-side validation can improve the scalability of web applications.
-- Case studies showing the impact of validation strategies on server performance.
-
 ## Setup and Installation
 
 ### Prerequisites
@@ -66,9 +61,6 @@ npm run build
 
 ### Client-Side Validation in Action
 
-Examples demonstrating various validation scenarios, showing how the Constraint Validation API can be leveraged to create a seamless user experience: 
-
-
 ![Clickthrough of form UI](src/formClickthrough.gif)
 
 ## Key Learnings
@@ -76,13 +68,18 @@ Examples demonstrating various validation scenarios, showing how the Constraint 
 Throughout the development of this project, several important learnings emerged, shaping my understanding of web development, user experience, and cybersecurity. These insights not only enhanced the project but also provided valuable lessons for future endeavors:
 
 1. **Scalability and Flexibility in Data Management**
-   - Leveraging APIs for Dynamic Data: Fetching data from reliable APIs or databases, rather than hard-coding values, is crucial for maintaining scalability and flexibility. For instance, country names and codes can change over time. In this project, data such as country names and codes were dynamically fetched from [REST Countries](https://restcountries.com/), ensuring up-to-date and accurate information.
+   - **Leveraging APIs for Dynamic Data**: Fetching data from reliable APIs or databases, rather than hard-coding values, is crucial for maintaining scalability and flexibility. For instance, country names and codes can change over time. In this project, data such as country names and codes were dynamically fetched from [REST Countries](https://restcountries.com/), ensuring up-to-date and accurate information.
 
 2. **Balancing User Experience in Validation**
-   - Precise yet Non-Intrusive Feedback: Striking a balance between providing precise instructions and error messages, while not overwhelming the user, is key to a positive user experience. For example, implementing tooltips like 'Passwords do not match' can be helpful, but it's important to time these messages appropriately to avoid intruding on the user's input process.
+   - **Precise yet Non-Intrusive Feedback**: Striking a balance between providing precise instructions and error messages, while not overwhelming the user, is key to a positive user experience. For example, implementing tooltips like 'Passwords do not match' can be helpful, but it's important to time these messages appropriately to avoid intruding on the user's input process.
+   
+   - **Understanding ValidityState**: The `ValidityState` interface in HTML5 provides various properties to check the validity of form elements. Common properties like `tooShort`, `rangeUnderflow`, and `patternMismatch` offer precise control over validation feedback. Exploring these properties allows for a more nuanced and user-friendly validation experience. For a comprehensive overview of `ValidityState` properties, refer to the [MDN Web Docs on ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState).
 
 3. **Cybersecurity Considerations in Client-Side Validation**
-   - Validating User Input on the Client Side: Comparing fields like 'password' and 'confirm password' on the client side is appropriate and adds an additional layer of verification before submission. However, the greater security concern lies in how passwords are stored and handled server-side, and ensuring secure transmission of data, preferably over HTTPS.
+   - **Validating User Input on the Client Side**: Implementing client-side validation is a fundamental first step in securing form inputs. However, it's crucial to be aware that client-side validation can be bypassed by bad actors. Techniques such as manipulating the DOM, disabling JavaScript, or directly interacting with the server can circumvent client-side checks. Despite this, it's important to remember that the vast majority of users will interact with forms as intended, and client-side validation significantly improves the user experience for these legitimate users.
+
+   - **Reducing Server Load**: Client-side validation plays a vital role in reducing unnecessary server load. By filtering out invalid submissions on the client side, we can prevent server resources from being consumed by processing incorrect or insufficient data. This aspect is particularly important for high-traffic websites, where efficiently managing server requests is crucial for performance. 
+
 
 These learnings underscore the multifaceted nature of web development, where technical implementation, user experience, and security considerations converge to create effective and user-friendly web applications.
 
@@ -98,4 +95,4 @@ For inquiries or discussion regarding this project, contact me at [hello@codebyk
 
 ## Acknowledgements and References
 
-This project is inspired by best practices in web development and utilizes the Constraint Validation API and the [REST Countries API](https://restcountries.com/). Special thanks to resources and guidelines from [MDN Web Docs on Form Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript), and insights into balancing client-side and server-side validation for scalable web applications.
+This project is inspired by best practices in web development and utilizes the [Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation) and the [REST Countries API](https://restcountries.com/). Special thanks to resources and guidelines from [MDN Web Docs on Form Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript), and insights into balancing client-side and server-side validation for scalable web applications.
