@@ -11,7 +11,7 @@ export default () => {
     })
 
     const validateEmail = () => {
-        let validityMessage = "";
+        let validityMessage = ""; // Ensures form considered valid with valid input
         if (emailInput.validity.typeMismatch) {
             validityMessage = "Please provide a valid email address.";
         } 

@@ -8,6 +8,9 @@ export default () => {
 
     const validatePassword = () => {
         let validityMessage = "";
+    
+        // Rules broken up to provide more granular feedback    
+        // RegEx used for testing multiple rules concurrently
         const digitRule = /(?=.*\d)/;
         if (!digitRule.test(passwordInput.value)) {
             validityMessage = "Please include at least 1 digit."
@@ -24,6 +27,8 @@ export default () => {
         if (!specialCharRule.test(passwordInput.value)) {
             validityMessage = "Please include at least 1 special character (Allowed characters: !@#$%^&*?)."
         } 
+        
+        // ValidityState properties used for more 'standard' rules
         if (passwordInput.validity.valueMissing) {
             validityMessage = "A password is required!";
         }
