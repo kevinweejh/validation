@@ -20,5 +20,6 @@ export default () => {
         }
 
         emailInput.setCustomValidity(validityMessage);
+        emailInput.reportValidity();
     }
 }
