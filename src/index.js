@@ -2,6 +2,7 @@ import './style.css';
 import EmailValidation from './emailValidation';
 import CountryValidation from './countryValidation';
 import ZipValidation from './zipValidation';
+import PasswordValidation from './passwordValidation';
 
 if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode!');
@@ -17,5 +18,6 @@ validationBtn.addEventListener("click", () => {
 EmailValidation();
 CountryValidation();
 ZipValidation();
-const passwordInput = document.querySelector("#password");
+PasswordValidation();
+
 const passwordConfirmationInput = document.querySelector("#passwordConfirmation");
